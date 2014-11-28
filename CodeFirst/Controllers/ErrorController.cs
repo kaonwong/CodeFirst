@@ -11,7 +11,7 @@ namespace CodeFirst.Controllers
 
         public ActionResult NotFound()
         {
-            return Content("testssss");
+            return Content("error 404, page not found.");
         }
 
     }
