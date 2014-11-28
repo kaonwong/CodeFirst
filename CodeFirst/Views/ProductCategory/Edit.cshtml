@@ -1,0 +1,47 @@
+﻿@model CodeFirst.Models.ProductCategory
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>ProductCategory</legend>
+
+        @Html.HiddenFor(model => model.Id)
+
+        @Html.EditorFor(model=>model.Translations)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IsActive)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IsActive)
+            @Html.ValidationMessageFor(model => model.IsActive)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CreatedAt)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.CreatedAt)
+            @Html.ValidationMessageFor(model => model.CreatedAt)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

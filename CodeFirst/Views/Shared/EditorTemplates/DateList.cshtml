@@ -1,0 +1,11 @@
+﻿@model DateTime?
+@{
+    var value = Model.HasValue ? Model.Value.ToString("yyyy-MM-dd") : "";
+    var additionValues=ViewData.ModelMetadata.AdditionalValues;
+    string classes = String.Format("form-control Date-List {0} {1}", ViewBag._Location, additionValues["Parent"]);
+}
+
+@Html.TextBox("",value,new
+{
+    @class=classes
+})

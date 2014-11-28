@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @RenderSection("styles", required: false)
+</head>
+<body>
+    <div>
+        @Html.ActionLink("English", "setCulture", "Home", new { culture="en" }, null)
+        @Html.ActionLink("中文", "setCulture", "Home", new { culture="zh" }, null)
+    </div>
+    <div>
+        @Html.ActionLink("Roles", "Index","SystemRole")
+        @Html.ActionLink("User", "Index","SystemUser")
+        @Html.ActionLink("Product Category","Index","ProductCategory")
+        @Html.ActionLink("Product","Index","Product")
+    </div>
+
+    @RenderBody()
+
+    @Scripts.Render("~/bundles/jquery")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,16 @@
+﻿@model CodeFirst.Models.ProductCategoryTranslation
+
+@if (CodeFirst.Helpers.LocationHelper.isCurrentControllerAndAction("ProductCategory", "Edit", ViewContext))
+{
+    @Html.HiddenFor(model => model.Id)
+    @Html.HiddenFor(model => model.ProductCategoryId)
+}
+
+@Html.HiddenFor(model => model.Lang)
+<div class="editor-label">
+    @Html.LabelFor(model => model.Name) (@Model.Lang)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.Name)
+    @Html.ValidationMessageFor(model => model.Name)
+</div>
